@@ -10,10 +10,11 @@ import pickle
 import numpy as np
 import re
 import pandas as ps
+from flask import Flask, render_template, request
 
-model = pickle.load(open('model.sav', 'rb'))
-bow = pickle.load(open('bow.sav', 'rb'))
-data = ps.read_json('intents.json')
+model = pickle.load(open('d:/Work/NLP-ChatBot/Python/ChatBot/model.sav', 'rb'))
+bow = pickle.load(open('d:/Work/NLP-ChatBot/Python/ChatBot/bow.sav', 'rb'))
+data = ps.read_json('d:/Work/NLP-ChatBot/Python/ChatBot/intents.json')
 import json
 import random
 
@@ -41,8 +42,6 @@ def predict(userText):
             pass
 
 
-from flask import Flask, render_template, request
-
 app = Flask(__name__)
 app.static_folder = 'static'
 
@@ -62,4 +61,4 @@ def get_bot_response():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

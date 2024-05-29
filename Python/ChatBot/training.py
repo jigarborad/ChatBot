@@ -15,7 +15,7 @@ import random
 import pickle
 
 # Import_dataset
-data = ps.read_json('intents.json')
+data = ps.read_json('d:/Work/NLP-ChatBot/Python/ChatBot/intents.json')
 
 # Clean_Data
 import re
